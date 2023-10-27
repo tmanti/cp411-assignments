@@ -1,5 +1,7 @@
 /*
  * Description: SimpleView reference design
+ * compile: g++ Camera.cpp Camera.hpp Cube.cpp Cube.hpp House.cpp House.hpp Matrix.cpp Matrix.hpp Menu.cpp Menu.hpp Point.cpp Point.hpp Pyramid.cpp Pyramid.hpp Shape.cpp Shape.hpp SimpleView.cpp Vector.cpp Vector.hpp World.cpp World.hpp -lopengl32 -lglu32 -lfreeglut -o simpleview.exe
+ * run: simpleview.exe
  * Author: HBF
  * Version: 2022-10-03
  */
@@ -75,7 +77,7 @@ int main(int argc, char** argv) {
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowPosition(100, 100);
 	glutInitWindowSize(winWidth, winHeight);
-	glutCreateWindow("SimpleView1 (Your name)");
+	glutCreateWindow("SimpleView1 Thomas Ingram");
 	init();
 	menu();
 	glutDisplayFunc(display);

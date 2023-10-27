@@ -53,35 +53,23 @@ Complete? Yes
 
 ### Q3.1 Create and render cube objects 
 
-Complete? (Yes/No) 
+Complete? Yes
 
-If Yes, insert a screen shot image to show the completion.
-
-[image caption](images/demo.png){width=90%}
-
-If No, add a short description to describe the issues encountered.
+[image caption](images/simpcube.png){width=90%}
 
 
 ### Q3.2 Create and render the pyramid object 
 
-Complete? (Yes/No) 
+Complete? Yes
 
-If Yes, insert a screen shot image to show the completion.
-
-[image caption](images/demo.png){width=90%}
-
-If No, add a short description to describe the issues encountered.
+[image caption](images/simppyr.png){width=90%}
 
 
 ### Q3.3 Create and render the house object 
 
-Complete? (Yes/No) 
+Complete? Yes
 
-If Yes, insert a screen shot image to show the completion.
-
-[image caption](images/demo.png){width=90%}
-
-If No, add a short description to describe the issues encountered.
+[image caption](images/simphouse.png){width=90%}
 
 
 ### Q3.4 MCS transforms 

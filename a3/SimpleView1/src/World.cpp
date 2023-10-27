@@ -12,13 +12,13 @@ World::World() {
 	objlist.push_back(obj);*/
 
 	// add more objects
-	Shape *pyra_obj = new Pyramid();
+	/*Shape *pyra_obj = new Pyramid();
 	pyra_obj->setId(1);
-	objlist.push_back(pyra_obj);
+	objlist.push_back(pyra_obj);*/
 
-	/*Shape *house_obj = new Pyramid();
+	Shape *house_obj = new House();
 	house_obj->setId(1);
-	objlist.push_back(house_obj);*/
+	objlist.push_back(house_obj);
 }
 
 World::~World(){
