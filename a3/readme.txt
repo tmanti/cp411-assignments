@@ -21,16 +21,16 @@ Q1.1 [5/5/*] Principle of transformations
 Q1.2 [5/5/*] Hand on 2D transformations              
 Q2 Graphics transformation programming
 Q2.1 [5/5/*] Warm up C++                             
-Q2.2 [0/5/*] 2D transformations                      
-Q2.3 [0/5/*] 3D object and transformations           
-Q2.4 [0/5/*] Mesh object model                       
+Q2.2 [5/5/*] 2D transformations                      
+Q2.3 [5/5/*] 3D object and transformations           
+Q2.4 [5/5/*] Mesh object model                       
 Q3 SimpleView1 - transformations
-Q3.1 [0/10/*] Create and render cube objects          
-Q3.2 [0/10/*] Create and render the pyramid object    
-Q3.3 [0/5/*] Create and render the house object      
-Q3.4 [0/15/*] MCS transforms                          
-Q3.5 [0/15/*] WCS transforms                          
-Q3.6 [0/15/*] VCS transforms                          
+Q3.1 [10/10/*] Create and render cube objects          
+Q3.2 [10/10/*] Create and render the pyramid object    
+Q3.3 [5/5/*] Create and render the house object      
+Q3.4 [15/15/*] MCS transforms                          
+Q3.5 [15/15/*] WCS transforms                          
+Q3.6 [15/15/*] VCS transforms                          
 
-Total: [0/100/*]
+Total: [100/100/*]
 

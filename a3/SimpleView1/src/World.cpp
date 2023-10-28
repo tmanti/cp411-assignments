@@ -7,17 +7,19 @@ using namespace std;
 
 World::World() {
 /* add Cube into the world object list */
-	/*Shape *obj = new Cube();
+	Shape *obj = new Cube();
 	obj->setId(1);
-	objlist.push_back(obj);*/
+	objlist.push_back(obj);
 
 	// add more objects
-	/*Shape *pyra_obj = new Pyramid();
-	pyra_obj->setId(1);
-	objlist.push_back(pyra_obj);*/
+	Shape *pyra_obj = new Pyramid();
+	pyra_obj->translate(3.0, 0.0, 0.0);
+	pyra_obj->setId(2);
+	objlist.push_back(pyra_obj);
 
 	Shape *house_obj = new House();
-	house_obj->setId(1);
+	house_obj->translate(6.0, 0.0, 0.0);
+	house_obj->setId(3);
 	objlist.push_back(house_obj);
 }
 
@@ -54,8 +56,11 @@ void World::draw() {
 
 void World::reset(){
 	std::list<Shape*>::iterator it;
+	int i = 0;
 	for (it = objlist.begin(); it !=  objlist.end(); ++it) {
 	  (*it)->reset();
+	  (*it)->translate(i*3, 0, 0);
+	  i++;
     }
 }
 

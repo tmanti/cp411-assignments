@@ -66,10 +66,19 @@ void Shape::rotateOrigin(GLfloat x0, GLfloat  y0, GLfloat  z0, GLfloat  rx, GLfl
 
 void Shape::setScale(GLfloat x) {
 	s = x;
+
 }
 
 void Shape::scaleChange(GLfloat x) {
 	s += x;
+
+	Matrix m;
+	m.loadIdentity();
+	m.mat[0][0] = s;
+	m.mat[1][1] = s;
+	m.mat[2][2] = s;
+
+	mc.matrixPreMultiply(&m);
 }
 
 void Shape::setId(GLint i) {

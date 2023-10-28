@@ -117,7 +117,7 @@ void MCSTransform(GLint x){
 		selectObj->rotate(x0, y0, z0, rx, ry, rz, theta * 0.5);
 	}
 	else if (transType == 4) { //model scale
-		selectObj->scaleChange(theta * 0.02);
+		selectObj->scaleChange(theta * 0.0001);
 	}
 }
 
@@ -147,13 +147,13 @@ void WCSTransform(GLint x){
 void VCSTransform(GLint x){
 	GLfloat theta = (xbegin - x > 0) ? 1 : -1;
 	if (transType == 1) {  //eye rotate x
-		myCamera.rotate(1.0, 0.0, 0.0, theta*0.5);
+		myCamera.rotate(1.0, 0.0, 0.0, theta*2);
 	}
 	else if (transType == 2) { // eye rotate y
-		myCamera.rotate(0.0, 1.0, 0.0, theta*0.5);
+		myCamera.rotate(0.0, 1.0, 0.0, theta*2);
 	}
 	else if(transType == 3){ //eye rotate z
-		myCamera.rotate(0.0, 0.0, 1.0, theta*0.5);
+		myCamera.rotate(0.0, 0.0, 1.0, theta*2);
 	}
 	else if (transType == 4) { //eye translate x
 		myCamera.translate(theta* 0.02, 0.0, 0.0);

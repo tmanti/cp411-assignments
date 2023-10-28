@@ -25,8 +25,9 @@ A:The Homogeneous coordinate system is used in transformation computing because 
 
 ### Q1.2 Hand on 2D transformations
 
-## Q2 Graphics transformation programming (lab practice)
+![image caption](images/a3q2.png){width=90%}
 
+## Q2 Graphics transformation programming (lab practice)
 
 ### Q2.1 Warm up C++ 
 Complete? Yes
@@ -55,59 +56,43 @@ Complete? Yes
 
 Complete? Yes
 
-[image caption](images/simpcube.png){width=90%}
+![Rendering Cube Object](images/simpcube.png){width=90%}
 
 
 ### Q3.2 Create and render the pyramid object 
 
 Complete? Yes
 
-[image caption](images/simppyr.png){width=90%}
+![Rendering Pyramid](images/simppyr.png){width=90%}
 
 
 ### Q3.3 Create and render the house object 
 
 Complete? Yes
 
-[image caption](images/simphouse.png){width=90%}
+![Rendering House](images/simphouse.png){width=90%}
 
 
 ### Q3.4 MCS transforms 
 
-Complete? (Yes/No) 
+Complete? Yes
 
-If Yes, insert a screen shot image to show the completion.
-
-[image caption](images/demo.png){width=90%}
-
-If No, add a short description to describe the issues encountered.
+![Scaled and MCS rotated cube](images/mcstrans.png){width=90%}
 
 
 ### Q3.5 WCS transforms 
 
-Complete? (Yes/No) 
+Complete? Yes
 
-If Yes, insert a screen shot image to show the completion.
-
-[image caption](images/demo.png){width=90%}
-
-If No, add a short description to describe the issues encountered.
+![Translated and WCS rotated cube](images/wcstrans.png){width=90%}
 
 
 ### Q3.6 VCS transforms 
 
-Complete? (Yes/No) 
+Complete? Yes 
 
-If Yes, insert a screen shot image to show the completion.
-
-[image caption](images/demo.png){width=90%}
-
-If No, add a short description to describe the issues encountered.
-
-
-
+![VCS rotation and translation of cube displaced](images/vcstrans.png){width=90%}
 
 **References**
 
 1. CP411 a3
-2. Add your references if you used any. 
