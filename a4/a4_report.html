@@ -1,0 +1,98 @@
+<h1 id="a4-report">A4 Report</h1>
+<p>Author: Thomas Ingram</p>
+<p>Date: 2023/11/06</p>
+<p>Check <a href="readme.txt" class="uri">readme.txt</a> for course work statement and self-evaluation.</p>
+<h2 id="q1-culling-lighting-shading-description">Q1 Culling, Lighting, Shading (description)</h2>
+<h3 id="q1.1-concepts-of-culling">Q1.1 Concepts of culling</h3>
+<ol class="incremental" type="1">
+<li>What is the difference between culling and clipping?</li>
+</ol>
+<p>A: culling removes or modifies primitives hidden in whole or part by other primitives whereas clipping removes or modifies primitives not within the viewing portion.</p>
+<ol class="incremental" start="2" type="1">
+<li>What is the difference between object precision and image precision hidden surface removal methods? Give an example of each method.</li>
+</ol>
+<p>A: the difference between object precision and image precision lies in the level of detail/granularity the method is considering when making decisions. Object Precision methods like Painter’s Algorithm usually require mainainting a sorted list of entire objects and their depths. Whereas image precision methods like Depth/Z Buffering only deal with individual pixels and determines visibility based purely on the depth at that point.</p>
+<h3 id="q1.2-culling-computing">Q1.2 Culling computing</h3>
+<p>Given:</p>
+<pre><code>eye position at E(3, 2, 2), and
+reference (look at) point at R(0, 0, 0).</code></pre>
+<ol class="incremental" type="1">
+<li>Compute to determine if triangle P1(1,0,0)P2(0,1,0)P3(0, 0, 1) is a back face.</li>
+<li>Compute the depth (z-value) of the above triangle.</li>
+</ol>
+<p><img src="images/a4q1.2.1.png" alt="image caption" style="width:90.0%" /> <img src="images/a4q1.2.2.png" alt="image caption" style="width:90.0%" /> <img src="images/a4q1.2.3.png" alt="image caption" style="width:90.0%" /></p>
+<h3 id="q1.3-concepts-of-lighting-and-shading">Q1.3 Concepts of lighting and shading</h3>
+<ol class="incremental" type="1">
+<li>What does a light source model determine? Give the names of three light source models.</li>
+</ol>
+<p>A:A light source model represents the light source direction/position, color and intensity in a 3d scene. the three light source models are: Point where light comes form a point, Directional where light comes from a direction and, Ambient where light comes from anywhere.</p>
+<ol class="incremental" start="2" type="1">
+<li>What does a reflection model determine? Give the names of three reflection models.</li>
+</ol>
+<p>A:A reflection model determines how light interacts with the surfaces of objects and how it is reflected by the surface. three reflection models are: Diffuse reflection, Specular reflection, Ambient reflection</p>
+<ol class="incremental" start="3" type="1">
+<li>What does a shading model determine? Give the names of three shading models.</li>
+</ol>
+<p>A:A shading model defines how a pixel color is calculated based on the light reflection models three basic shading models are: Constant Shading, Gouraud Shading, Phong Shading</p>
+<h3 id="q1.4-lighting-computing">Q1.4 Lighting computing</h3>
+<p>Given: - eye position at E(3, 2, 2), point light position at L(1, 2, 4) with light intensity 0.8, - triangle P1(1,0,0)P2(0,1,0)P3(0, 0, 1), and surface diffusion rate 0.4 for red color.</p>
+<p>Compute the simple diffusion reflection intensity of red color at the center of the triangle. Use the simple diffusion reflection formula in slide 11 of lecture 13 (lighting).</p>
+<figure>
+<img src="images/a4q1.4.png" alt="image caption" style="width:90.0%" /><figcaption>image caption</figcaption>
+</figure>
+<h2 id="q2-opengl-culling-lighting-shading-lab-practice">Q2 OpenGL Culling, Lighting, Shading (lab practice)</h2>
+<h3 id="q2.1-hidden-surface-removal">Q2.1 Hidden surface removal</h3>
+<p>Complete? Yes</p>
+<figure>
+<img src="images/cull.png" alt="image caption" style="width:90.0%" /><figcaption>image caption</figcaption>
+</figure>
+<figure>
+<img src="images/cubedata.png" alt="image caption" style="width:90.0%" /><figcaption>image caption</figcaption>
+</figure>
+<h3 id="q2.2-lighting-and-shading">Q2.2 Lighting and shading</h3>
+<p>Complete? Yes</p>
+<figure>
+<img src="images/litsphere.png" alt="image caption" style="width:90.0%" /><figcaption>image caption</figcaption>
+</figure>
+<figure>
+<img src="images/movinglight.png" alt="image caption" style="width:90.0%" /><figcaption>image caption</figcaption>
+</figure>
+<figure>
+<img src="images/material.png" alt="image caption" style="width:90.0%" /><figcaption>image caption</figcaption>
+</figure>
+<figure>
+<img src="images/lightshade.png" alt="image caption" style="width:90.0%" /><figcaption>image caption</figcaption>
+</figure>
+<h3 id="q2.3-animation">Q2.3 Animation</h3>
+<p>Complete? Yes</p>
+<figure>
+<img src="images/anim.png" alt="image caption" style="width:90.0%" /><figcaption>image caption</figcaption>
+</figure>
+<h2 id="q3-simpleview2-culling-lighting-shading-programming">Q3 SimpleView2 Culling, Lighting, Shading (programming)</h2>
+<h3 id="q3.1-culling">Q3.1 Culling</h3>
+<p>Complete? Yes</p>
+<figure>
+<img src="images/culling.png" alt="image caption" style="width:90.0%" /><figcaption>image caption</figcaption>
+</figure>
+<h3 id="q3.2-lighting">Q3.2 Lighting</h3>
+<p>Complete? Yes</p>
+<figure>
+<img src="images/light.png" alt="image caption" style="width:90.0%" /><figcaption>image caption</figcaption>
+</figure>
+<h3 id="q3.3-shading">Q3.3 Shading</h3>
+<p>Complete? Yes</p>
+<figure>
+<img src="images/shading.png" alt="image caption" style="width:90.0%" /><figcaption>image caption</figcaption>
+</figure>
+<p>it doesnt affect all faces perfectly</p>
+<h3 id="q3.4-animations">Q3.4 Animations</h3>
+<p>Complete? No</p>
+<figure>
+<img src="images/animation.png" alt="image caption" style="width:90.0%" /><figcaption>image caption</figcaption>
+</figure>
+<p>i implemented the spin of a single object but I couldnt implement the solar system because for some reason whenever I would add the house object to the world it would crash, I implemented sun and earth but since I couldnt use the house object I couldnt get the 3rd planet.</p>
+<p><strong>References</strong></p>
+<ol class="incremental" type="1">
+<li>CP411 a4</li>
+<li>Add your references if you used any.</li>
+</ol>
