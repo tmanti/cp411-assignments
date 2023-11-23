@@ -28,44 +28,31 @@ A:
 
 ### Q2.1 Curve model and rendering 
 
-Complete? Yes or No 
+Complete? Yes
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
+![image caption](images/curve.png){width=90%}
 
 ### Q2.2 Surface model and rendering 
 
-Complete? Yes or No 
+Complete? Yes 
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
+![image caption](images/model.png){width=90%}
 
 ### Q2.3 Texture mapping 
 
-Complete? Yes or No 
+Complete? Yes 
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
+![image caption](images/texture.png){width=90%}
 
 ### Q2.4 GPU programming by GLSL 
 
-Complete? Yes or No 
+Complete? Yes
 
-If you answer Yes, insert a screen shot image to show the completion.
-
+1) Cube
 ![image caption](images/demo.png){width=90%}
 
-If No,  add a short description to describe the issues encountered.
-
+2) Fractal 
+![image caption](images/demo.png){width=90%}
 
 ## Q3 SimpleView3 - texture, GLSL, curve, and surface (programming)
 
