@@ -46,82 +46,50 @@ Complete? Yes
 
 ### Q2.4 GPU programming by GLSL 
 
-Complete? Yes
+Complete? No
 
-1) Cube
-![image caption](images/demo.png){width=90%}
-
-2) Fractal 
-![image caption](images/demo.png){width=90%}
+the Angel module has a lot of errors and would never compile properly no matter which version I tried to use of it and thus could never use GLSL
 
 ## Q3 SimpleView3 - texture, GLSL, curve, and surface (programming)
 
 
 ### Q3.1 Texture mapping basics
 
-Complete? Yes or No 
+Complete? Yes
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
-
+![image caption](images/cube.png){width=90%}
 
 ### Q3.2 Solar system with texture mapping
 
-Complete? Yes or No 
+Complete? yes
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
+![image caption](images/solar.png){width=90%}
 
 
 ### Q3.3 Bezier curve
 
-Complete? Yes or No 
+Complete? Yes 
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
+![image caption](images/bezier.png){width=90%}
 
 
 ### Q3.4 Rotation surface of Bezier curve
 
-Complete? Yes or No 
+Complete? Yes
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
+![image caption](images/surface.png){width=90%}
 
 
 ### Q3.5 Phong shading by GLSL
 
-Complete? Yes or No 
+Complete? No
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
+the Angel module has a lot of errors and would never compile properly no matter which version I tried to use of it and thus could never use GLSL
 
 
 ### Q3.6 My Graphics Library
 
-Complete? Yes or No 
-
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
-
+Complete? Yes
 
 
 

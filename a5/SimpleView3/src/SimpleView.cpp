@@ -11,7 +11,7 @@
 #include "solar/Solar.hpp"
 #include "curve/Bezier.hpp"
 #include "surface/RBM.hpp"
-#include "glsl/Angel.h"
+//#include "glsl/Angel.h"
 
 
 #include <GL/glut.h>
@@ -80,8 +80,8 @@ void init(void) {
 
 // your code
 //initialize GLSL
-	ProgramObject = InitShader( "shader/vertexshader.txt", "shader/fragmentshader.txt" );
-	glUseProgram(0);  // disable GLSL shader at start
+	//ProgramObject = InitShader( "shader/vertexshader.txt", "shader/fragmentshader.txt" );
+	//glUseProgram(0);  // disable GLSL shader at start
 
 
 }
@@ -193,7 +193,7 @@ int main(int argc, char** argv) {
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowPosition(100, 100);
 	glutInitWindowSize(winWidth, winHeight);
-	glutCreateWindow("SimpleView3 (your name) ");
+	glutCreateWindow("SimpleView3 (Thomas Ingram) ");
 
 	// your code
 	//glewInit(); // your code this is for GSLS

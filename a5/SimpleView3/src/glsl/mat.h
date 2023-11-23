@@ -35,10 +35,10 @@ class mat2 {
 	{ _m[0] = vec2( m00, m01 ); _m[1] = vec2( m10, m11 ); }
 
     mat2( const mat2& m ) {
-	if ( *this != m ) {
-	    _m[0] = m._m[0];
-	    _m[1] = m._m[1];
-	} 
+        if ( *this != m ) {
+            _m[0] = m._m[0];
+            _m[1] = m._m[1];
+        } 
     }
 
     //

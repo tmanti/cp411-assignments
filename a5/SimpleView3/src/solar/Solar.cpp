@@ -4,18 +4,21 @@
 Solar::Solar() {
 	sun = new Sphere(1.0);
 	sun->translate(0, 0, 0);
+	sun->setTextureID(2);
 	sun->r = 1.0;
 	sun->g = 0.0;
 	sun->b = 0.0;
 
 	earth = new Sphere(0.25);
 	earth->translate(0, 2, 0);
+	earth->setTextureID(3);
 	earth->r = 0.0;
 	earth->g = 1.0;
 	earth->b = 0.0;
 
 	moon = new Sphere(0.1);
 	moon->translate(0, 2.4, 0);
+	moon->setTextureID(4);
 	moon->r = 0.0;
 	moon->g = 0.0;
 	moon->b = 1.0;

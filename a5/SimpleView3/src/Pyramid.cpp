@@ -66,7 +66,7 @@ void Pyramid::drawFace(GLint i)
 	switch (renderMode) {
 	case WIRE:
 		glColor3f(r, g, b);
-	   glBegin(GL_LINE_LOOP);
+	   	glBegin(GL_LINE_LOOP);
 		glVertex3fv(vertex[face[i][0]]);
 		glVertex3fv(vertex[face[i][1]]);
 		glVertex3fv(vertex[face[i][2]]);
@@ -102,7 +102,15 @@ void Pyramid::drawFace(GLint i)
 		break;
 
 	case TEXTURE:
-
+		glColor3f(1, 1, 1);
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D,0);
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0, 1.0); glVertex3fv(&vertex[face[i][0]][0]);
+		glTexCoord2f(1.0, 0.0); glVertex3fv(&vertex[face[i][1]][0]);
+		glTexCoord2f(1.0, 1.0); glVertex3fv(&vertex[face[i][2]][0]);
+		glEnd();
+		glDisable(GL_TEXTURE_2D);
 		break;
 	}
 }

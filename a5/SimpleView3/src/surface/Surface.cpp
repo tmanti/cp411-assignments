@@ -37,7 +37,16 @@ void Surface::drawSurface() {
 
 	case TEXTURE:
 		// your code
-
+		for (int j = 0; j < col-1; j++) {
+			for (int i = 0; i < row-1; i++) {
+				glBegin(GL_POLYGON);
+				glVertex3f(Pts[i][j].x, Pts[i][j].y, Pts[i][j].z);
+				glVertex3f(Pts[i + 1][j].x, Pts[i + 1][j].y, Pts[i + 1][j].z);
+				glVertex3f(Pts[i + 1][j + 1].x, Pts[i + 1][j + 1].y, Pts[i + 1][j + 1].z);
+				glVertex3f(Pts[i][j+1].x, Pts[i][j+1].y, Pts[i][j+1].z);
+				glEnd();
+			}
+		}
 		break;
 	}
 }

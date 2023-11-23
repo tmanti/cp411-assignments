@@ -384,7 +384,7 @@ void shadeMenu(GLint option) {
 	glDisable( GL_NORMALIZE);
 	glDisable(GL_COLOR_MATERIAL);
 
-	glUseProgram( 0 );
+	//glUseProgram( 0 );
 	switch (option){
 	  case 1:
 		//isShading = false;
@@ -401,14 +401,14 @@ void shadeMenu(GLint option) {
 		break;
 	  case 5:
 		renderMode = TEXTURE;
-		//glEnable(GL_DEPTH_TEST);
-		//glEnable(GL_TEXTURE_2D);
-		//glDisable(GL_LIGHTING);
-		//glEnable(GL_LIGHT0);
+		glEnable(GL_DEPTH_TEST);
+		glEnable(GL_TEXTURE_2D);
+		glDisable(GL_LIGHTING);
+		glEnable(GL_LIGHT0);
 		break;
 	  case 6:
 		renderMode = PHONE;
-		glUseProgram( ProgramObject );
+		//glUseProgram( ProgramObject );
 
 		// light properties
 		GLfloat ambient[] = { 0.1f, 0.1f, 0.3f, 1.0f };
@@ -585,7 +585,7 @@ void reset() {
 	myRBM.reset();
 	myCamera.reset();
 
-	glUseProgram(0);  // disable GLSL shader
+	//glUseProgram(0);  // disable GLSL shader
 	glutIdleFunc(NULL);
 	glDisable(GL_LIGHTING);
 	glDisable(GL_LIGHT0);

@@ -12,7 +12,21 @@ void Curve::reset() {
 }
 
 void Curve::drawCurve() {
-// your code
+	if (nPts < 2) {
+        // Not enough points to draw a curve
+        return;
+    }
+
+    glLineWidth(2.0);
+    glColor3f(1.0, 1.0, 1.0);
+
+    glBegin(GL_LINE_STRIP);
+
+    for (int i = 0; i < nPts; i++) {
+        glVertex2f(Pts[i].x, Pts[i].y);
+    }
+
+    glEnd();
 }
 
 void Curve::set2DView(GLfloat left, GLfloat right, GLfloat bottom, GLfloat top) {

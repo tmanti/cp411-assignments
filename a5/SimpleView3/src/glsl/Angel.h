@@ -36,7 +36,7 @@
 #  include <GLUT/glut.h>
 #else // non-Mac OS X operating systems
 #include <GL/glew.h>
-//#  include <GL/glut.h>
+#include <GL/glut.h>
 #include <GL/freeglut.h>
 #include <GL/freeglut_ext.h>
 #endif  // __APPLE__

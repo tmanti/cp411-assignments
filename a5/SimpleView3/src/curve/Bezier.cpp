@@ -14,19 +14,55 @@ void Bezier::reset() {
 
 /*  Compute binomial coefficients C[n] for given value of n, output in GLint C[] */
 void Bezier::binomialCoeffs(GLint n, GLint C[]) {
-	// your code, using O(n) algorithm for C_{n, i), i = 0, 1, ..., n
+     for (GLint k = 0; k <= n; k++) {
+        // Compute C(n, k) = n! / (k! * (n-k)!)
+        C[k] = 1;
+        for (GLint j = n; j >= k + 1; j--) {
+            C[k] *= j;
+        }
+        for (GLint j = n - k; j >= 2; j--) {
+            C[k] /= j;
+        }
+    }
 }
 
 /*  Compute Bezier point at u, and output in Point *bezPt */
 void Bezier::computeBezPt(GLfloat u, GLint nCtrlPts, Point ctrlPts[], GLint C[], Point *bezPt)
 {
-  // your code
+	GLint n = nCtrlPts - 1; // Degree of the Bezier curve
+
+    bezPt->x = bezPt->y = bezPt->z = 0.0;
+
+    for (GLint i = 0; i < nCtrlPts; i++) {
+        GLfloat bez = C[i] * pow(u, i) * pow(1.0 - u, n - i);
+        bezPt->x += ctrlPts[i].x * bez;
+        bezPt->y += ctrlPts[i].y * bez;
+        bezPt->z += ctrlPts[i].z * bez;
+    }
 }
 
 /*  Compute both Bezier point and tangent at u, and output in Point bezPt and Vector bezTan respectively*/
 void Bezier::computeBezPtTan(GLfloat u, GLint nCtrlPts, Point ctrlPts[], GLint C[], Point *bezPt, Vector *bezTan)
 {
 // your code
+	GLint n = nCtrlPts - 1; // Degree of the Bezier curve
+
+    bezPt->x = bezPt->y = bezPt->z = 0.0;
+    bezTan->x = bezTan->y = bezTan->z = 0.0;
+
+    for (GLint i = 0; i < nCtrlPts; i++) {
+        GLfloat bez = C[i] * pow(u, i) * pow(1.0 - u, n - i);
+        bezPt->x += ctrlPts[i].x * bez;
+        bezPt->y += ctrlPts[i].y * bez;
+        bezPt->z += ctrlPts[i].z * bez;
+    }
+
+    for (GLint i = 0; i < nCtrlPts - 1; i++) {
+        GLfloat blend = C[i] * (i - n * u) * pow(u, i - 1) * pow(1.0 - u, n - i);
+        bezTan->x += ctrlPts[i + 1].x * blend;
+        bezTan->y += ctrlPts[i + 1].y * blend;
+        bezTan->z += ctrlPts[i + 1].z * blend;
+    }
 }
 
 

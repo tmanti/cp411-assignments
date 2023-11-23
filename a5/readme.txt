@@ -21,16 +21,16 @@ Q1.1 [0/5/*] Cubic spline computing
 Q1.2 [0/5/*] Rotation surface and normal             
 
 Q2 Curve, surface, texture, GLSL
-Q2.1 [0/5/*] Curve model and rendering               
-Q2.2 [0/5/*] Surface model and rendering             
-Q2.3 [0/5/*] Texture mapping                         
+Q2.1 [5/5/*] Curve model and rendering               
+Q2.2 [5/5/*] Surface model and rendering             
+Q2.3 [5/5/*] Texture mapping                         
 Q2.4 [0/5/*] GPU programming by GLSL                 
 
 Q3 SimpleView3 - texture, GLSL, curve, and surface
-Q3.1 [0/10/*] Texture mapping basics                  
-Q3.2 [0/10/*] Solar system with texture mapping       
-Q3.3 [0/20/*] Bezier curve                            
-Q3.4 [0/20/*] Rotation surface of Bezier curve        
+Q3.1 [10/10/*] Texture mapping basics                  
+Q3.2 [10/10/*] Solar system with texture mapping       
+Q3.3 [20/20/*] Bezier curve                            
+Q3.4 [20/20/*] Rotation surface of Bezier curve        
 Q3.5 [0/10/*] Phong shading by GLSL                   
 Q3.6 [0/0/*] My Graphics Library                     
 
