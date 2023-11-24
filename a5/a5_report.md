@@ -2,7 +2,7 @@
 
 Author: Thomas Ingram 
 
-Date: 2023/11/21
+Date: 2023/11/23
 
 Check [readme.txt](readme.txt) for course work statement and self-evaluation. 
   
@@ -13,15 +13,18 @@ Check [readme.txt](readme.txt) for course work statement and self-evaluation.
 Q:Given P1=(2, 3), P2=(3,0), and tangents at P1 and P2, P’1 = (1, 0), P’2=(1, -2). Compute the parametric equation of Hermite cubic spline passing through P1 and P2 with the given tangents.
 
 A:
+![image caption](images/a5q1.1.png){width=90%}
 
 ### Q1.2 Rotation surface and normal
 Q:Write parametric equation expression of the rotation surface of the above cubic spline w.r.t. x-axis.
 
 A:
+![image caption](images/a5q1.2.1.png){width=90%}
 
 Q:Write the parametric equation expression of the normal of the above rotation surface.
 
 A:
+![image caption](images/a5q1.2.2.png){width=90%}
 
 ## Q2 Curve, surface, texture, GLSL (lab practice)
 
