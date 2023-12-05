@@ -6,7 +6,7 @@
 #include <ctime>
 #include <iostream>
 
-//compile g++ *.cpp *.hpp *.h -lopengl32 -lglu32 -lfreeglut -lglew32 -o terrain.exe
+//compile g++ *.cpp *.hpp *.h -lopengl32 -lglu32 -lfreeglut -o terrain.exe
 
 #define FNL_IMPL
 #include "FastNoise.h"//perlin noise implementation found here: https://github.com/Auburn/FastNoiseLite/tree/master/C
@@ -116,10 +116,10 @@ void renderChunk(Chunk chunk) {
 
     std::cout << chunk.getWorldPos()[0] << chunk.getWorldPos()[1] << "|" << chunk.start_x << "|" << chunk.start_y << "\n";
 
-    for (int i = 0; i < CHUNKSIZE; ++i) {
-        for (int j = 0; j < CHUNKSIZE; ++j) {
+    for (int i = 0; i <= CHUNKSIZE; ++i) {
+        for (int j = 0; j <= CHUNKSIZE; ++j) {
             // Bind the appropriate texture based on the terrain height
-            GLfloat height = chunk.getHeight(i, j);
+            GLfloat height = chunk.getHeightRel(i, j);
             GLuint textureID;
 
             if (height < 0.4) {
@@ -140,15 +140,15 @@ void renderChunk(Chunk chunk) {
 
             glTexCoord2f(1.0f, 0.0f);
             //glColor3f(1, 0, 0);
-            glVertex3f(chunk.start_x + i + 1, chunk.getHeight(i + 1, j), chunk.start_y + j);
+            glVertex3f(chunk.start_x + i + 1, chunk.getHeightRel(i + 1, j), chunk.start_y + j);
 
             glTexCoord2f(1.0f, 1.0f);
             //glColor3f(1, 0, 0);
-            glVertex3f(chunk.start_x + i + 1, chunk.getHeight(i + 1, j + 1), chunk.start_y + j + 1);
+            glVertex3f(chunk.start_x + i + 1, chunk.getHeightRel(i + 1, j + 1), chunk.start_y + j + 1);
 
             glTexCoord2f(0.0f, 1.0f);
             //glColor3f(1, 0, 0);
-            glVertex3f(chunk.start_x + i, chunk.getHeight(i, j + 1), chunk.start_y + j + 1);
+            glVertex3f(chunk.start_x + i, chunk.getHeightRel(i, j + 1), chunk.start_y + j + 1);
             glEnd();
         }
     }

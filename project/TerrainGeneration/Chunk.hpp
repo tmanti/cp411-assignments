@@ -9,7 +9,7 @@
 
 class Chunk {
 protected:
-    GLfloat HeightMap[CHUNKSIZE][CHUNKSIZE];
+    GLfloat HeightMap[CHUNKSIZE+1][CHUNKSIZE+1];
 public:
     GLint start_x, start_y;
     Chunk(int seed, GLint x, GLint y);
