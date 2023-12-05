@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>proposal</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="proposal.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cp411-project-your-project-title">CP411 Project: Your Project Title</h1>
+<p>Author(s): Thomas Ingram (200188260), Ben Cooney (200900760)</p>
+<p>Date: 2023-11-27</p>
+<h2 id="introduction">Introduction</h2>
+<p>In this project we will be implementing procedural terrain generation in OpenGL and C++. procedural generation is the backbone behind many open world exploration video games in today’s modern game industry. it allows for infinite and interesting worlds for players to epxlore, this technique of terrain generation can be seen in varying complexities using it to not only add interesting things to the game world but also breath life into the world. This technique can be seen in popular modern games such as Minecraft, No Mans Sky, and Terraria. for our project we will be implementing a simple version in 3D that allows the user to fly around and see the generated world that changes on each run of the program.</p>
+<h2 id="problem-solving-and-algorithms">Problem solving and algorithms</h2>
+<p>the major computing problem of procedural generation is a question of efficiency in both memory and compute time. terrain generation can be a costly system operation but using various techniques to limit what is seen and computed by the computer at a specific time we can solve these problems. one such solution is breaking the world up into chunks to allow for divide and conquer approach as we only render small pieces (3 by 3 grid of specific size around the player) of the world the player is actually in such that we arent rerendering and storing a large amount of world information. additionally we can implement view culling to stop from rendering traingles outside the users field of view.</p>
+<h2 id="design-consideration">Design consideration</h2>
+<p>the general design will be one of data oriented programming as the most important consideration in this case is memory and efficiency. additionally since we arent really worried about extended functionality we dont need to handle each objects and their interactions with the interfaces of object oriented programming.</p>
+<p>for general overview of the project we will have the main file and import different functionalities as needed through the use of different files which handle focused tasks, for example: a world file (handles world generation), a camera file (handles users current position and view), a noise file (a file to handle the noise map and considerations around it as well) as well as files for data structures such as chunks etc.</p>
+<h2 id="milestones-schedule">Milestones &amp; schedule</h2>
+<p>List of tasks/milestones/check points of your project with time schedule. For group project, it needs to provide the roles and tasks of each member.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Task ID</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: center;">Due date</th>
+<th style="text-align: center;">Lead</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Project research &amp; team up</td>
+<td style="text-align: center;">Day 7 of week 10</td>
+<td style="text-align: center;">Ben</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Project proposal</td>
+<td style="text-align: center;">Day 6 of week 11</td>
+<td style="text-align: center;">Thomas/Ben</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Project check point (Draw terrain)</td>
+<td style="text-align: center;">11/30/23</td>
+<td style="text-align: center;">Ben</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Project check point (Transform terrain to height map)</td>
+<td style="text-align: center;">12/1/23</td>
+<td style="text-align: center;">Thomas</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Project check point (Add Textures)</td>
+<td style="text-align: center;">12/2/23</td>
+<td style="text-align: center;">Ben</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Project check point (Camera Movement)</td>
+<td style="text-align: center;">12/3/23</td>
+<td style="text-align: center;">Thomas</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Project demonstration</td>
+<td style="text-align: center;">Day 6 of week 12</td>
+<td style="text-align: center;">Ben</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Project submission</td>
+<td style="text-align: center;">Day 7 of week 12</td>
+<td style="text-align: center;">Thomas</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<p>A list of references you read for your project, such as papers, articles, data sources.</p>
+<ul class="incremental">
+<li><p>https://en.wikipedia.org/wiki/Procedural_generation</p></li>
+<li><p>http://www.fdg2015.org/papers/fdg2015_paper_19.pdf</p></li>
+<li><p>https://www.gamedeveloper.com/design/how-to-effectively-use-procedural-generation-in-games</p></li>
+</ul>
+</body>
+</html>
