@@ -96,29 +96,25 @@ void render()
 
             // draw vertex 0
         	glTexCoord2f(0.0f, 0.0f);
-        	//glColor3f(terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f);
-            glColor3f(128,256,128);
+        	glColor3f(terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f);
             glVertex3f(terrain[x][z][0],
                        terrain[x][z][1], terrain[x][z][2]);
 
             // draw vertex 1
             glTexCoord2f(1.0f, 0.0f);
-            //glColor3f(terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f);
-            glColor3f(128,256,128);
+            glColor3f(terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f);
             glVertex3f(terrain[x+1][z][0], terrain[x+1][z][1],
                        terrain[x+1][z][2]);
 
             // draw vertex 2
             glTexCoord2f(0.0f, 1.0f);
-            //glColor3f(terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f);
-            glColor3f(128,256,128);
+            glColor3f(terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f);
             glVertex3f(terrain[x][z+1][0], terrain[x][z+1][1],
                        terrain[x][z+1][2]);
 
             // draw vertex 3
             glTexCoord2f(1.0f, 1.0f);
-            //glColor3f(terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f);
-            glColor3f(128,256,128);
+            glColor3f(terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f, terrain[x][z][2] / 255.0f);
             glVertex3f(terrain[x+1][z+1][0],
                        terrain[x+1][z+1][1],
                        terrain[x+1][z+1][2]);
