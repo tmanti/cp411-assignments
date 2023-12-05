@@ -17,8 +17,8 @@ Grade_Item_ID [self-evaluation/total/marker-evaluation] Description
 A5
 
 Q1 Curve and surface computing
-Q1.1 [0/5/*] Cubic spline computing                  
-Q1.2 [0/5/*] Rotation surface and normal             
+Q1.1 [5/5/*] Cubic spline computing                  
+Q1.2 [5/5/*] Rotation surface and normal             
 
 Q2 Curve, surface, texture, GLSL
 Q2.1 [5/5/*] Curve model and rendering               
