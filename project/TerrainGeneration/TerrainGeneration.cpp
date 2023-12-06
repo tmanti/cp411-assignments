@@ -5,6 +5,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <time.h>
+#include <stdlib.h>
 
 //compile g++ *.cpp *.hpp *.h -lopengl32 -lglu32 -lfreeglut -o terrain.exe
 
@@ -16,14 +18,17 @@
 #include "Chunk.hpp"
 #include "Camera.hpp"
 
-const int windowWidth = 800;
-const int windowHeight = 600;
+const int windowWidth = 1000;
+const int windowHeight = 800;
 
 char* rockTexturePath = "textures/rock.bmp";
 char* grassTexturePath = "textures/grass.bmp";
 char* snowTexturePath = "textures/snow.bmp";
 
-World world = World(100);
+int world_seed = 110;
+int render_distance = 3;
+
+World world = World(110, render_distance);
 Camera camera;
 
 bool mouseClicking = false;
@@ -36,6 +41,7 @@ void mouseFunc(int button, int state, int x, int y);
 void motionFunc(int x, int y);
 void keyHandler(unsigned char key, int x, int y);
 bool LoadTextures();
+void mainMenu(GLint option);
 
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
@@ -46,10 +52,10 @@ int main(int argc, char** argv) {
     // Set up OpenGL options (optional)
     glMatrixMode(GL_PROJECTION);
     gluPerspective(
-        60.0,  // field of view in degree
+        90.0,  // field of view in degree
         1.0,   // aspect ratio
         1.0,   // Z near
-        1500.0   // Z far
+        3000.0   // Z far
     );
     glMatrixMode(GL_MODELVIEW);
 
@@ -67,7 +73,13 @@ int main(int argc, char** argv) {
     glutMotionFunc(motionFunc);
     glutKeyboardFunc(keyHandler);
 
+    glutCreateMenu(mainMenu);
+    glutAddMenuEntry("Regenerate With Random Seed", 1);
+    glutAddMenuEntry("Quit", 2);
+    glutAttachMenu(GLUT_RIGHT_BUTTON);
+
     // Enter GLUT event processing loop
+
     glutMainLoop();
 
     return 0;
@@ -114,18 +126,18 @@ bool LoadTextures(){
 void renderChunk(Chunk chunk) {
     glEnable(GL_TEXTURE_2D);
 
-    std::cout << chunk.getWorldPos()[0] << chunk.getWorldPos()[1] << "|" << chunk.start_x << "|" << chunk.start_y << "\n";
+    //std::cout << chunk.getWorldPos()[0] << chunk.getWorldPos()[1] << "|" << chunk.start_x << "|" << chunk.start_y << "\n";
 
-    for (int i = 0; i <= CHUNKSIZE; ++i) {
-        for (int j = 0; j <= CHUNKSIZE; ++j) {
+    for (int i = 0; i < CHUNKSIZE; ++i) {
+        for (int j = 0; j < CHUNKSIZE; ++j) {
             // Bind the appropriate texture based on the terrain height
             GLfloat height = chunk.getHeightRel(i, j);
             GLuint textureID;
 
-            if (height < 0.4) {
-                textureID = rock_id;
-            } else if (height < 0.7) {
+            if (height < 0.5) {
                 textureID = grass_id;
+            } else if (height < 0.7) {
+                textureID = rock_id;
             } else {
                 textureID = snow_id;
             }
@@ -136,19 +148,19 @@ void renderChunk(Chunk chunk) {
             glBegin(GL_QUADS);
             glTexCoord2f(0.0f, 0.0f);
             //glColor3f(1, 0, 0);
-            glVertex3f(chunk.start_x + i, height, chunk.start_y + j);
+            glVertex3f(chunk.start_x + i, chunk.start_y + j, height*20);
 
             glTexCoord2f(1.0f, 0.0f);
             //glColor3f(1, 0, 0);
-            glVertex3f(chunk.start_x + i + 1, chunk.getHeightRel(i + 1, j), chunk.start_y + j);
+            glVertex3f(chunk.start_x + i + 1, chunk.start_y + j, chunk.getHeightRel(i + 1, j)*20);
 
             glTexCoord2f(1.0f, 1.0f);
             //glColor3f(1, 0, 0);
-            glVertex3f(chunk.start_x + i + 1, chunk.getHeightRel(i + 1, j + 1), chunk.start_y + j + 1);
+            glVertex3f(chunk.start_x + i + 1, chunk.start_y + j + 1, chunk.getHeightRel(i + 1, j + 1)*20);
 
             glTexCoord2f(0.0f, 1.0f);
             //glColor3f(1, 0, 0);
-            glVertex3f(chunk.start_x + i, chunk.getHeightRel(i, j + 1), chunk.start_y + j + 1);
+            glVertex3f(chunk.start_x + i, chunk.start_y + j + 1, chunk.getHeightRel(i, j + 1)*20);
             glEnd();
         }
     }
@@ -210,12 +222,28 @@ void keyHandler(unsigned char key, int x, int y){
         camera.cameraPosY -= 1 * cos(camera.cameraYaw);
         camera.cameraPosZ -= 1 * sin(camera.cameraPitch);
     }
+    if(key == ' '){
+        camera.cameraPosZ += 1;
+    }
+    int new_world_x = camera.cameraPosX/CHUNKSIZE;
+    int new_world_y = camera.cameraPosY/CHUNKSIZE;
+    if(new_world_x - world.world_x == 1){
+        world.LoadChunks(East);
+    } else if(new_world_x - world.world_x == -1){
+        world.LoadChunks(West); 
+    }        
+    if(new_world_y - world.world_y == 1){
+        world.LoadChunks(South);
+    } else if(new_world_y - world.world_y == -1){
+        world.LoadChunks(North); 
+    }
     glutPostRedisplay();
 }
 
 void renderScene() {
     // Clear the framebuffer
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glEnable(GL_CULL_FACE);
 
     // Update camera/view matrix based on user input
     updateCamera();
@@ -227,6 +255,8 @@ void renderScene() {
         renderChunk(loaded[i]);
     }
 
+    glCullFace(GL_BACK); 
+
     glutSwapBuffers();
 }
 
@@ -237,4 +267,23 @@ void reshape(int width, int height) {
     glLoadIdentity();
     gluPerspective(45.0, static_cast<double>(width) / height, 1.0, 100.0);
     glMatrixMode(GL_MODELVIEW);
+}
+
+void rand_seed(){
+    srand(time(NULL));   // Initialization, should only be called once.
+    world_seed = rand();
+    world = World(world_seed, render_distance);
+}
+
+void mainMenu(GLint option){
+    switch(option){
+        case 1:
+            camera.ResetToDefaults();
+            rand_seed();
+            break;
+        case 2:
+            exit(0);
+            break;
+    }
+    glutPostRedisplay();
 }

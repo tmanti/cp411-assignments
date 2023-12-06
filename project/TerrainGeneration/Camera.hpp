@@ -12,8 +12,14 @@ public:
     GLfloat cameraYaw;
     GLfloat cameraPitch;
 
+    void ResetToDefaults(){
+        cameraPosX = 8;
+        cameraPosY = 8;
+        cameraPosZ = 40;
+    }
+
     // Constructor to initialize values
-    Camera() : cameraPosX(-600.0), cameraPosY(20.0f), cameraPosZ(400.0), cameraYaw(260.0f), cameraPitch(0.0f) {
+    Camera() : cameraPosX(8), cameraPosY(8), cameraPosZ(40.0f), cameraYaw(0.0f), cameraPitch(0.0f) {
     }
 };
 

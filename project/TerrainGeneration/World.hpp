@@ -16,12 +16,13 @@ protected:
     int world_seed;
     std::vector<Chunk> loaded_chunks;
 public:
-    World(int seed);
+    int world_x, world_y;
+    int render_distance;
+    World(int seed, int rend);
     std::vector<Chunk> getLoadedChunks();
     void LoadChunks(Direction dir);
     
 private:
-    int world_x, world_y;
     void initWorld();
     void UnloadChunks();
 };

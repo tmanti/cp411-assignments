@@ -7,7 +7,7 @@
 #include <vector>
 #include <cmath>
 
-World::World(int seed) : world_seed(seed) {
+World::World(int seed, int rend) : world_seed(seed), render_distance(rend) {
     initWorld();
     world_x = 0;
     world_y = 0;
@@ -18,9 +18,9 @@ std::vector<Chunk> World::getLoadedChunks() {
 }
 
 void World::initWorld(){
-    for(int i = -1; i <= 1; i++){
-        for(int j = -1; j <= 1; j++){
-            std::cout << i << j << "\n";
+    for(int i = -render_distance; i <= render_distance; i++){
+        for(int j = -render_distance; j <= render_distance; j++){
+            //std::cout << i << j << "\n";
             loaded_chunks.push_back(Chunk(world_seed, i*CHUNKSIZE, j*CHUNKSIZE));
         }
     } 
@@ -30,30 +30,30 @@ void World::LoadChunks(Direction dir){
     switch(dir){
         case North:
             world_y-=1;
-            loaded_chunks.push_back(Chunk(world_seed, (world_x-1)*CHUNKSIZE, (world_y-1)*CHUNKSIZE));
-            loaded_chunks.push_back(Chunk(world_seed, (world_x)*CHUNKSIZE, (world_y-1)*CHUNKSIZE));
-            loaded_chunks.push_back(Chunk(world_seed, (world_x+1)*CHUNKSIZE, (world_y-1)*CHUNKSIZE));
+            for(int i = -render_distance; i <= render_distance; i++){
+                loaded_chunks.push_back(Chunk(world_seed, (world_x+i)*CHUNKSIZE, (world_y-render_distance)*CHUNKSIZE));
+            }
             break;
 
         case South:
             world_y+=1;
-            loaded_chunks.push_back(Chunk(world_seed, (world_x-1)*CHUNKSIZE, (world_y+1)*CHUNKSIZE));
-            loaded_chunks.push_back(Chunk(world_seed, (world_x)*CHUNKSIZE, (world_y+1)*CHUNKSIZE));
-            loaded_chunks.push_back(Chunk(world_seed, (world_x+1)*CHUNKSIZE, (world_y+1)*CHUNKSIZE));
+            for(int i = -render_distance; i <= render_distance; i++){
+                loaded_chunks.push_back(Chunk(world_seed, (world_x+i)*CHUNKSIZE, (world_y+render_distance)*CHUNKSIZE));
+            }
             break;
 
         case East:
             world_x+=1;
-            loaded_chunks.push_back(Chunk(world_seed, (world_x+1)*CHUNKSIZE, (world_y-1)*CHUNKSIZE));
-            loaded_chunks.push_back(Chunk(world_seed, (world_x+1)*CHUNKSIZE, (world_y)*CHUNKSIZE));
-            loaded_chunks.push_back(Chunk(world_seed, (world_x+1)*CHUNKSIZE, (world_y+1)*CHUNKSIZE));
+            for(int i = -render_distance; i <= render_distance; i++){
+                loaded_chunks.push_back(Chunk(world_seed, (world_x+render_distance)*CHUNKSIZE, (world_y+i)*CHUNKSIZE));
+            }
             break;
 
         case West:
             world_x-=1;
-            loaded_chunks.push_back(Chunk(world_seed, (world_x-1)*CHUNKSIZE, (world_y-1)*CHUNKSIZE));
-            loaded_chunks.push_back(Chunk(world_seed, (world_x-1)*CHUNKSIZE, (world_y)*CHUNKSIZE));
-            loaded_chunks.push_back(Chunk(world_seed, (world_x-1)*CHUNKSIZE, (world_y+1)*CHUNKSIZE));
+            for(int i = -render_distance; i <= render_distance; i++){
+                loaded_chunks.push_back(Chunk(world_seed, (world_x-render_distance)*CHUNKSIZE, (world_y+i)*CHUNKSIZE));
+            }
             break;
     }
     UnloadChunks();
@@ -63,11 +63,13 @@ void World::UnloadChunks() {
     std::vector<int> bad_chunks;
     for (int i = 0; i < loaded_chunks.size(); i++){
         int* pos = loaded_chunks[i].getWorldPos();
-        if(abs(world_x - pos[0]) >= 2 || abs(world_y - pos[1]) >= 2){
+        if(abs(world_x - pos[0]) > render_distance || abs(world_y - pos[1]) > render_distance){
             bad_chunks.push_back(i);
         }
         free(pos);
     }
+
+    //std::cout << "unload | " << bad_chunks.size() << "\n";
 
     for (int i = 0; i < bad_chunks.size(); i++){
         loaded_chunks[bad_chunks[i]] = loaded_chunks.back();

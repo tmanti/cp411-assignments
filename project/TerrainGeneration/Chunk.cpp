@@ -13,8 +13,9 @@ Chunk::Chunk(int seed, GLint x, GLint y) : start_x(x), start_y(y) {
 void Chunk::generateHeightMap() {
     //std::cout << "NOISE TEST" << (fnlGetNoise2D(&noise, start_x, start_y)+0.5)*20 << "|" << start_x << "|" << start_y << "\n";
     for (int i = 0; i <= CHUNKSIZE; ++i) {
+        //std::cout << i << "\n";
         for (int j = 0; j <= CHUNKSIZE; ++j) {
-            HeightMap[i][j] = fnlGetNoise2D(&noise, start_x+i, start_y+j)+0.4;
+            HeightMap[i][j] = fnlGetNoise2D(&noise, (start_x+i)*4, (start_y+j)*4)+0.4;
         }
     }
 }
@@ -29,6 +30,7 @@ GLfloat Chunk::getHeightRel(GLint x_rel, GLint y_rel) {
     if (x_rel >= 0 && x_rel <= CHUNKSIZE && y_rel >= 0 && y_rel <= CHUNKSIZE) {
         return HeightMap[x_rel][y_rel];
     } else {
+        //std::cout << x_rel << "|" << y_rel << "\n";
         return 0.0f;
     }
 }
