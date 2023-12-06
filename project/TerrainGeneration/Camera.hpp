@@ -19,7 +19,7 @@ public:
     }
 
     // Constructor to initialize values
-    Camera() : cameraPosX(8), cameraPosY(8), cameraPosZ(40.0f), cameraYaw(0.0f), cameraPitch(0.0f) {
+    Camera() : cameraPosX(8), cameraPosY(8), cameraPosZ(45.0f), cameraYaw(0.0f), cameraPitch(-0.32f) {
     }
 };
 

@@ -174,6 +174,8 @@ void updateCamera() {
     // Limit the pitch to avoid flipping the camera
     camera.cameraPitch = fmin(fmax(camera.cameraPitch, -1.5f), 1.5f);
 
+    std::cout << camera.cameraPitch << "\n";
+
     // Set the camera perspective
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
@@ -211,16 +213,19 @@ void motionFunc(int x, int y) {
     }
 }
 
+#define MAX(x, y) (((x) > (y)) ? (x) : (y))
+int MIN_HEIGHT = 40;
+
 void keyHandler(unsigned char key, int x, int y){
     if (key =='w') {
         camera.cameraPosX += 1 * sin(camera.cameraYaw);
         camera.cameraPosY += 1 * cos(camera.cameraYaw);
-        camera.cameraPosZ += 1 * sin(camera.cameraPitch);
+        camera.cameraPosZ = MAX(camera.cameraPosZ + 1 * sin(camera.cameraPitch), MIN_HEIGHT);
     }
     if (key == 's') {
         camera.cameraPosX -= 1 * sin(camera.cameraYaw);
         camera.cameraPosY -= 1 * cos(camera.cameraYaw);
-        camera.cameraPosZ -= 1 * sin(camera.cameraPitch);
+        camera.cameraPosZ = MAX(camera.cameraPosZ-1 * sin(camera.cameraPitch), MIN_HEIGHT);
     }
     if(key == ' '){
         camera.cameraPosZ += 1;
