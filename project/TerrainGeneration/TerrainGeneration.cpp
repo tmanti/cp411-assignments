@@ -26,7 +26,7 @@ char* grassTexturePath = "textures/grass.bmp";
 char* snowTexturePath = "textures/snow.bmp";
 
 int world_seed = 110;
-int render_distance = 3;
+int render_distance = 6;
 
 World world = World(110, render_distance);
 Camera camera;
@@ -59,7 +59,14 @@ int main(int argc, char** argv) {
     );
     glMatrixMode(GL_MODELVIEW);
 
-    //gluLookAt(0, 0, 200, 0, 0, 0, 0, 1, 0);
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LEQUAL);
+
+    glEnable(GL_ALPHA_TEST);
+    glAlphaFunc(GL_GREATER, 0.05f);
+
+    glEnable(GL_POLYGON_OFFSET_FILL);
+    glPolygonOffset(1.0, 1.0);
 
     // Load textures
     LoadTextures();
@@ -110,7 +117,7 @@ bool LoadTextures(){
     gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, grassInfo.biHeight, grassInfo.biWidth, GL_RGB, GL_UNSIGNED_BYTE, grassTexture);
 
 
-    snowTexture = LoadBitmapFile("stone.bmp", &snowInfo);
+    snowTexture = LoadBitmapFile(snowTexturePath, &snowInfo);
        if (!snowTexture)
            return false;
 
@@ -147,19 +154,19 @@ void renderChunk(Chunk chunk) {
             // Draw a quad with texture coordinates
             glBegin(GL_QUADS);
             glTexCoord2f(0.0f, 0.0f);
-            //glColor3f(1, 0, 0);
+            glColor3f(255, 255, 255);
             glVertex3f(chunk.start_x + i, chunk.start_y + j, height*20);
 
             glTexCoord2f(1.0f, 0.0f);
-            //glColor3f(1, 0, 0);
+            glColor3f(255, 255, 255);
             glVertex3f(chunk.start_x + i + 1, chunk.start_y + j, chunk.getHeightRel(i + 1, j)*20);
 
             glTexCoord2f(1.0f, 1.0f);
-            //glColor3f(1, 0, 0);
+            glColor3f(255, 255, 255);
             glVertex3f(chunk.start_x + i + 1, chunk.start_y + j + 1, chunk.getHeightRel(i + 1, j + 1)*20);
 
             glTexCoord2f(0.0f, 1.0f);
-            //glColor3f(1, 0, 0);
+            glColor3f(255, 255, 255);
             glVertex3f(chunk.start_x + i, chunk.start_y + j + 1, chunk.getHeightRel(i, j + 1)*20);
             glEnd();
         }

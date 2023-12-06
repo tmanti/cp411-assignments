@@ -1,4 +1,4 @@
-# CP411 Project: Your Project Title
+# CP411 Project: Procedural Terrain Generation CP411 Graphics Project
 
 Author(s): Thomas Ingram (200188260), Ben Cooney (200900760)
 
@@ -43,3 +43,5 @@ A list of references you read for your project, such as papers, articles, data s
 - http://www.fdg2015.org/papers/fdg2015_paper_19.pdf 
 
 - https://www.gamedeveloper.com/design/how-to-effectively-use-procedural-generation-in-games
+
+- https://github.com/Auburn/FastNoiseLite

@@ -1,0 +1,40 @@
+<h1 id="procedural-terrain-generation-cp411-graphics-project">Procedural Terrain Generation CP411 Graphics Project</h1>
+<p>this project creates a 3D world that the user can explore by flying around and seeing a world generated entirely by perlin noise!</p>
+<p>Made by Thomas Ingram and Ben Cooney.</p>
+<figure>
+<img src="images/showcase.png" alt="our project" style="width:90.0%" /><figcaption>our project</figcaption>
+</figure>
+<h2 id="controls">Controls</h2>
+<p>W - Fly forward in the direction the camera is pointing</p>
+<p>S - Fly Backwards in the opposite direction the camera is pointing.</p>
+<p>Left Click <strong>and</strong> Drag - Pans the camera</p>
+<p>Right Click - Brings up the menu</p>
+<h3 id="menu">Menu</h3>
+<p>The menu for our project allows the user to:</p>
+<ul class="incremental">
+<li><p>Generate a random new world and explore that (sets a new seed for the procedural generation).</p></li>
+<li><p>Quit the program.</p></li>
+</ul>
+<h2 id="running-the-project">Running the Project</h2>
+<p>to compile and run the project it is quite easy.</p>
+<p>Navigate to the <code>/TerrainGeneration</code> folder and run the following command:</p>
+<pre><code>g++ *.cpp *.hpp *.h -lopengl32 -lglu32 -lfreeglut -o terrain.exe</code></pre>
+<p>this will create an executable file terrain.exe, make sure you have the texture files (grass.bmp, rock.bmp, snow.bmp) under the “textures” folder in the same spot as the “terrain.exe” executable.</p>
+<p><strong>NOTE</strong>: this is not an eclipse project thus it is not preconfigured to run/build as an eclipse project, use the command defined above to build and run.</p>
+<h3 id="eclipse-compatability">Eclipse Compatability</h3>
+<p>if any issues arise in eclipse copy paste all files to a new C++ project and make sure libraries below are set</p>
+<figure>
+<img src="images/eclipse.png" alt="our project" style="width:90.0%" /><figcaption>our project</figcaption>
+</figure>
+<h2 id="designimportant-files">Design/Important Files</h2>
+<h3 id="world-cpphpp">World (cpp/hpp)</h3>
+<p>handles all world specific logic and configuration (seed/render distance). Most important part is the handling of chunk/heightmap memory (creation and deletion).</p>
+<h3 id="chunk-cpphpp">Chunk (cpp/hpp)</h3>
+<p>logic and implementation of a chunk, includes heightmap construction logic in addition to logic surrounding the translation between chunk coordinates and world coordainte systems.</p>
+<h3 id="camera.hpp">Camera.hpp</h3>
+<p>a data structure to handle and store camera configuration information.</p>
+<h3 id="textures.hpp">Textures.hpp</h3>
+<p>contains method and logic behind loading bitmaps used for textures</p>
+<h3 id="fastnoise.h">FastNoise.h</h3>
+<p>contains logic for implementing our perlin noise used for generation of the heightmap.</p>
+<p>code borrowed from (https://github.com/Auburn/FastNoiseLite)</p>
