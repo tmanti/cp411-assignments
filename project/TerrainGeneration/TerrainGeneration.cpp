@@ -174,7 +174,7 @@ void updateCamera() {
     // Limit the pitch to avoid flipping the camera
     camera.cameraPitch = fmin(fmax(camera.cameraPitch, -1.5f), 1.5f);
 
-    std::cout << camera.cameraPitch << "\n";
+    //std::cout << camera.cameraPitch << "\n";
 
     // Set the camera perspective
     glMatrixMode(GL_MODELVIEW);
