@@ -17,26 +17,26 @@ Grade_Item_ID [self-evaluation/total/marker-evaluation] Description
 A2
 
 Q1 Graphics pipeline
-Q1.1 [0/2/*] Coordinate systems & transformations    
-Q1.2 [0/2/*] Primitives                              
-Q1.3 [0/2/*] Scan conversion                         
-Q1.4 [0/4/*] Hand-on Bresenham algorithm             
+Q1.1 [2/2/*] Coordinate systems & transformations    
+Q1.2 [2/2/*] Primitives                              
+Q1.3 [2/2/*] Scan conversion                         
+Q1.4 [4/4/*] Hand-on Bresenham algorithm             
 
 Q2 OpenGL and Glut
-Q2.1 [0/4/*] OpenGL primitives                       
-Q2.2 [0/3/*] Interactive graphics                    
-Q2.3 [0/3/*] Bitmap file I/O                         
+Q2.1 [4/4/*] OpenGL primitives                       
+Q2.2 [3/3/*] Interactive graphics                    
+Q2.3 [3/3/*] Bitmap file I/O                         
 
 Q3 SimpleDraw
-Q3.1 [0/10/*] Display window and menu                 
-Q3.2 [0/10/*] Data structures                         
-Q3.3 [0/5/*] Draw rectangles                         
-Q3.4 [0/10/*] Draw circles                            
+Q3.1 [10/10/*] Display window and menu                 
+Q3.2 [10/10/*] Data structures                         
+Q3.3 [5/5/*] Draw rectangles                         
+Q3.4 [10/10/*] Draw circles                            
 Q3.5 [0/20/*] Edit features                           
 Q3.6 [0/10/*] Save/Open SVG files                     
 Q3.7 [0/5/*] Export to bitmap                        
 Q3.8 [0/10/*] Circle&Square artwork                   
 
-Total: [0/100/*]
+Total: [55/100/*]
 
 

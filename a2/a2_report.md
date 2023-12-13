@@ -1,8 +1,8 @@
 # A2 Report
 
-Author: ??? 
+Author: Thomas Ingram 
 
-Date: ??? 
+Date: 2023-10-03
 
 Check [readme.txt](readme.txt) for course work statement and self-evaluation. 
   
@@ -11,23 +11,49 @@ Check [readme.txt](readme.txt) for course work statement and self-evaluation.
 
 ### Q1.1 Coordinate systems & transformations
 
-Copy the question and write your answer here.
+What coordinate systems and transformations are involved in graphics pipeline?
+
+A:the coordinate systems involved are:
+- Modeling Coordinate System (MCS)
+- World Coordinate System (WCS)
+- View Coordinate System (VCS)
+- Normalized Device Coordinate System (NDCS)
+- Device Coordinate System or Screen Coordinate System (DCS or SCS)
+
+the transformations involved are as follows:
+- Modeling Transforms (MCS to WCS)
+- Viewing Transforms (WCS to VCS)
+- Projection Transforms (VCS to NDCS)
+- Display Transforms (NDCS to DCS/SCS)
 
 
 ### Q1.2 Primitives
 
-Copy the question and write your answer here.
+What are graphic primitives, and their relations to graphics objects?
+
+A:Graphic primitives are the basic shapes that are directly supported by the hardware.
+
+the primitives are:
+- Points
+- Line Segments
+- Polygons
+	- can be decomposed to triangles
+
+graphics objects are made/defined by the collection of graphics primitives they are made up of. 
 
 
 ### Q1.3 Scan conversion
 
-Copy the question and write your answer here.
+What does a scan conversion algorithm do?
+
+Scan conversion algorithms convert primitives to pixels in the last step of the graphics pipeline and render the primitives to the frame buffer.
 
 
 ### Q1.4 Hand-on Bresenham algorithm
 
-Copy the question and write your answer here.
+Apply Bresenham algorithm to determine the pixel positions of line segment from (1, 2) to (7, 6). Write you answer on paper, take a picture, and insert the picture here.
 
+![Bresenham Algorithm](images/bresen.png)
 
 
 ## Q2 OpenGL and Glut (lab practice)
@@ -35,33 +61,21 @@ Copy the question and write your answer here.
 
 ### Q2.1 OpenGL primitives 
 
-Complete? Yes or No 
+Yes
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
+![image caption](images/primitives.png){width=90%}
 
 ### Q2.2 Interactive graphics 
 
-Complete? Yes or No 
+Yes
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
+![image caption](images/points.png){width=90%}
 
 ### Q2.3 Bitmap file I/O 
 
-Complete? Yes or No 
+Yes
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
+![image caption](images/bitmap.png){width=90%}
 
 
 ## Q3 SimpleDraw (programming)
@@ -69,85 +83,46 @@ If No,  add a short description to describe the issues encountered.
 
 ### Q3.1 Display window and menu
 
-Complete? Yes or No 
+Yes
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
-
+![image caption](images/simpledraw_window.png){width=90%}
 
 ### Q3.2 Data structures
 
-Complete? Yes or No 
+Yes
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
-
+![image caption](images/simpledraw_ds.png){width=90%}
 
 ### Q3.3 Draw rectangles
 
-Complete? Yes or No 
+Yes
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
-
+![image caption](images/simpledraw_rect.png){width=90%}
 
 ### Q3.4 Draw circles
 
-Complete? Yes or No 
+Yes
 
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
+![image caption](images/simpledraw_circle.png){width=90%}
 
 
 ### Q3.5 Edit features
 
-Complete? Yes or No 
-
-If you answer Yes, insert a screen shot image to show the completion.
-
-![image caption](images/demo.png){width=90%}
-
-If No,  add a short description to describe the issues encountered.
-
+No, no time
 
 ### Q3.6 Save/Open SVG files
 
-Complete? Yes or No
-
-If you answer Yes, link the image
-![output.bmp](images/output.svg).
+No, no time
 
 
 ### Q3.7 Export to bitmap
 
-Complete? Yes or No
-
-If you answer Yes, link the image
-![ouput.bmp](images/output.bmp).
+No, no time
 
 
 ### Q3.8 Circle&Square artwork
 
-Complete? Yes or No
-
-If you answer Yes, link the images
-[C&S artwork in SVG](images/c&s.svg)
-![C&S artwork in bitmap](images/c&s.bmp).
-
-
-
+No, no time
 
 **References**
 
