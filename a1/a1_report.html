@@ -1,0 +1,43 @@
+<h1 id="a1-report">A1 Report</h1>
+<p>Author: Thomas Ingram</p>
+<p>Date: 2023-09-16</p>
+<p>Check <a href="readme.txt" class="uri">readme.txt</a> for course work statement and self-evaluation.</p>
+<h2 id="q1-concepts-of-raster-graphics-short-answer">Q1 Concepts of raster graphics (short answer)</h2>
+<h3 id="q1.1-frame-buffer">Q1.1 frame buffer</h3>
+<p>The framebuffer is a specifically allocated block of graphics memory to hold the graphics data of image raster patterns in a raster graphic system.</p>
+<h3 id="q1.2-pixel">Q1.2 pixel</h3>
+<p>A pixel, or picture element, is a raster pattern element that corresponds to both a dot on the raster display and in the framebuffer.</p>
+<h3 id="q1.3-color-depth">Q1.3 color depth</h3>
+<p>The colour depth is the number of bits that corresponds to a single pixel within the memory space of the framebuffer, it can vary between 1,8,16, or 24 bits. ### Q1.4 resolution Resolution is the number of pixels in the raster display and by extension in the frame buffer, it is normally represented by the amount of pixels in a row multipliedby the amount of rows.</p>
+<h2 id="q2-concepts-of-raster-display-short-answer">Q2 Concepts of raster display (short answer)</h2>
+<h3 id="q2.1-scan-line">Q2.1 scan line</h3>
+<p>A scanline is a row of pixels in a raster display. ### Q2.2 refreshment &amp; refresh rate refreshment is the process of redrawing a full scanline of pixels on the raster display, refresment of the entire raster display is normally done with various patterns to decrease and eliminate flicker.</p>
+<p>the refresh rate or frequency is the rate at which the display refreshes and displays frames normally counted in frames per second.. ### Q2.3 frame A frame refers to a full scan of an image/raster pattern on the screen, it is normally stored then displayed in the frame buffer.</p>
+<h2 id="q3-roles-of-cpu-and-gpu-in-cg-short-answer">Q3 Roles of CPU and GPU in CG (short answer)</h2>
+<h3 id="q3.1-cpu-roles">Q3.1 CPU roles</h3>
+<p>the CPU in CG is reponsible for model computing and communicating information such as the graphic object model data (verticies) to the video memory as well as the instructions to the GPU. ### Q3.2 GPU roles GPU is a separate, self-contained computing device dedicated for graphics computing, the GPU processes object data, generates pixel data and stores the pixel data in the framebuffer. it is generally responsible for any and all rendering computing.</p>
+<h2 id="q4-cc-opengl-programming-environment-lab-practice">Q4 C/C++ OpenGL programming environment (lab practice)</h2>
+<h3 id="q4.1-cc-opengl-installation">Q4.1 C/C++ OpenGL installation</h3>
+<p>Yes</p>
+<figure>
+<img src="images/cube.png" alt="cube.zip project" /><figcaption>cube.zip project</figcaption>
+</figure>
+<figure>
+<img src="images/glsl.png" alt="glsl project" /><figcaption>glsl project</figcaption>
+</figure>
+<h3 id="q4.2-opengl-c-project">Q4.2 OpenGL C project</h3>
+<p>Yes</p>
+<figure>
+<img src="images/cproj.png" alt="the result of running openglc" /><figcaption>the result of running openglc</figcaption>
+</figure>
+<h3 id="q4.3-opengl-c-project">Q4.3 OpenGL C++ project</h3>
+<p>Yes</p>
+<figure>
+<img src="images/c++proj.png" alt="result of running MyOpenGL project" /><figcaption>result of running MyOpenGL project</figcaption>
+</figure>
+<p><strong>References</strong></p>
+<ol class="incremental" type="1">
+<li>CP411 a1</li>
+<li><a href="https://bohr.wlu.ca/hfan/cp411/examples/mk/blender.c">blender.c</a></li>
+<li><a href="https://bohr.wlu.ca/hfan/cp411/examples/glut_test.cpp">glut_test.cpp</a></li>
+</ol>
